@@ -1,14 +1,14 @@
 Amazing Database
 =======
 
-# User Guide
+## User Guide
 
 Let's take the of a Person struct with int age and string name.
-## Include ABD.cpp
+### Include ABD.cpp
 ```cpp
 #include "ADB.cpp"
 ```
-## Make the datatype
+### Make the datatype
 Make sure to include the serialize and deserialize functions.
 ```cpp
 struct Person {
@@ -29,19 +29,19 @@ struct Person {
 };
 ```
 
-## Initialize a schema
+### Initialize a schema
 - The a Schema needs to be provided with key type and the data type that we just created.
 - The constructor needs to be provived with a file(name) for storing the data and the indexing.
 ```cpp
 Schema<int, Person> personSchema("person_db.bin", "person_db_index.bin");
 ```
 
-## Use the database
+### Use the database
 Examples
 ```cpp
 personSchema.insertRecord(1, {10, "Bob"});
 std::cout << personSchema.retrieveRecord(1).name << std::endl;
 personSchema.deleteRecord(1);
 ```
-## Extra note
+### Extra note
 Don't worry about saving anything everythings automatically stored in the specified files.
